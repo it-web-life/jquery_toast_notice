@@ -1,0 +1,138 @@
+@charset "UTF-8";
+
+/* Toast CSS start */
+.toast {
+  position: relative;
+  width: 100%;
+  border-top: 1px solid #000;
+  background-color: #fff;
+  font-size: 20px;
+}
+
+.toast__frame {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.toast__text {
+  text-align: center;
+  padding: 15px;
+}
+
+.toast__close {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.close-button {
+  display: inline-block;
+	width: 20px;
+	height: 20px;
+	position: relative;
+  /* border: 1px solid rgba(0,0,0,.1); */
+  background-color: #444;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.close-button::before,
+.close-button::after {
+  display: block;
+	content: "";
+	position: absolute;
+	top: 50%;
+  left: 50%;
+  width: 70%;
+  height: 10%;
+  margin: -6% 0 0 -33%;
+	background: #fff;
+}
+.close-button::before {
+  transform: rotate(-45deg);
+}
+.close-button::after {
+  transform: rotate(45deg);
+}
+
+/* Toast CSS end */
+
+.test-button {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+.button {
+  display: block;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  cursor: pointer;
+  background-color: #dedede;
+  padding: 10px;
+  border-radius: 5px;
+}
+.button:hover {
+  font-weight: bold;
+  opacity: .7;
+}
+.button:focus {
+  outline: none;
+}
+
+.header {
+  width: 100%;
+  background-color: #fff;
+}
+
+.heading {
+  font-size: 2rem;
+  text-align: center;
+  padding: 20px 0;
+}
+@media screen and (max-width:767px) {
+  .heading {
+    font-size: 1.5rem;
+  }
+}
+
+.container {
+  padding: 20px 0;
+}
+
+.title {
+  font-size: 25px;
+  margin: 50px auto 20px;
+}
+
+.title:first-letter {
+  font-size: 40px;
+  color: #f00;
+}
+
+.text {
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left;
+  margin: 20px 0;
+}
+
+.imageDog {
+  width: 100%;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+}
+
+.dummy {
+  width: 50%;
+  margin: 50px auto;
+  text-align: center;
+}
+
+@media screen and (max-width:767px) {
+  .dummy {
+    width: 100%;
+  }
+}
