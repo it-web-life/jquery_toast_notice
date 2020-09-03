@@ -52,6 +52,7 @@ $(function() {
       // トースト表示を消す
       $toastDom.remove();
 
+      // 通知がすべて消えていたらトーストの大枠を消す
       if (!toastInstance.length) {
         $toastFrame.remove();
       }
@@ -59,13 +60,19 @@ $(function() {
 
     // 閉じるボタンのクリックでトースト表示を消す
     $toastDom.find('.toast__close').on('click', function() {
-      console.log('click');
+      // 配列のindexを取得
       var index = toastInstance.indexOf($toastDom);
       if (index !== -1) {
+        // 一致があればインスタンス配列から削除
         toastInstance.splice(index, 1);
       }
       // トースト表示を消す
-      $toastDom.slideDown().remove();
+      $toastDom.remove();
+
+      // 通知がすべて消えていたらトーストの大枠を消す
+      if (!toastInstance.length) {
+        $toastFrame.remove();
+      }
     });
   };
   /** Toast本体 end */
@@ -75,7 +82,7 @@ $(function() {
   var testCount = 1;
   // テストボタンをクリックする度にトースト表示され、テキストがカウントアップします
   $('.test-button').on('click', function() {
-    toast('トーストの表示です。 ' + testCount);
+    toast('トーストの表示です。 ' + testCount, 5000);
     testCount++;
   });
 });
